@@ -60,16 +60,13 @@ def prepare_submission(data, filename):
 	# Make sure the submission is the right shape
 	assert data.shape == (884262, 40), "Submission has the wrong dimensions"
 
-	# Write to file
-	f = open("./output/%s.csv" % filename, "w")
-	header = ["Id"] + LABELS
-	f.write(",".join(header) + "\n")
-	f.close()
+	# If it's not a pandas DataFrame, make it one
+	if(type(data) is not pd.DataFrame):
+		data = pd.DataFrame(data=data, columns=['Id'] + LABELS)
+	else:
+		data.columns = ['Id'] + LABELS
 
-	# Stupid mixed file modes
-	f = open("./output/%s.csv" % filename, "ab")
-	np.savetxt(f, data, fmt = "%1.0d", newline = "\n", delimiter = ",")
-	f.close()
+	data.to_csv("./output/%s.csv" % filename, index=False, float_format='%1.5f')
 
 	# Zip it up
 	zippy = zipfile.ZipFile("./output/%s.zip" % filename, mode = 'w')
