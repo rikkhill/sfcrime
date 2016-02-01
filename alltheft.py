@@ -18,5 +18,11 @@ vec.fill(code)
 oos = perf.oos_error(vec, test)
 print(oos)
 
+sc = perf.scores(vec, test)
+print(sc)
+
+prediction = hd.vec_to_binmatrix(vec)
+
+print(perf.mc_loss(prediction, test))
 
 #hd.submit(vec, 'alltheft')

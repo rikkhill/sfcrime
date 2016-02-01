@@ -1,6 +1,7 @@
 
 TEST_ROWS = 884262
 
+# All category labels
 LABELS = ['ARSON', 'ASSAULT', 'BAD CHECKS', 'BRIBERY', 'BURGLARY',
  'DISORDERLY CONDUCT', 'DRIVING UNDER THE INFLUENCE', 'DRUG/NARCOTIC',
  'DRUNKENNESS', 'EMBEZZLEMENT', 'EXTORTION', 'FAMILY OFFENSES',
@@ -10,6 +11,18 @@ LABELS = ['ARSON', 'ASSAULT', 'BAD CHECKS', 'BRIBERY', 'BURGLARY',
  'RUNAWAY', 'SECONDARY CODES', 'SEX OFFENSES FORCIBLE',
  'SEX OFFENSES NON FORCIBLE', 'STOLEN PROPERTY', 'SUICIDE', 'SUSPICIOUS OCC',
  'TREA', 'TRESPASS', 'VANDALISM', 'VEHICLE THEFT', 'WARRANTS', 'WEAPON LAWS']
+
+# Nine labels comprising top 80% of crimes
+LABELS_80 = [   'LARCENY/THEFT',    # 19.92%
+                'OTHER OFFENSES',   # 14.37%
+                'NON-CRIMINAL',     # 10.51%
+                'ASSAULT',          # 8.76%
+                'DRUG/NARCOTIC',    # 6.15%
+                'VEHICLE THEFT',    # 6.13%
+                'VANDALISM',        # 5.09
+                'WARRANTS',         # 4.81%
+                'BURGLARY'          # 4.19%
+                ]
 
 # Call this as helper.constants.CODE['CRIME LABEL'] for the code
 CODE = dict(zip(LABELS, range(1, len(LABELS) + 1)))
