@@ -1,6 +1,14 @@
-Repo for San Francisco Crime Kaggle challenge
+Repo for [San Francisco Crime Kaggle challenge](https://www.kaggle.com/c/sf-crime). Predicting crime classifications from arrest data, principally geopositional.
 
-This should be private. If you can see it, and you're not Rikk, Chris, Henrietta or Alberto, then stop looking at it, or we'll tell on you.
+This Kaggle competition was entered as part of the coursework requirement for The Applied Machine Learning module of the UCL MSc. in Computational Statistics and Machine Learning.
+
+Team Bayesian Bandits: Alberto Martin, Chris Hart, Henrietta Forssen and Rikk Hill
+
+The competition has now passed, as has the UCL module, so I'm making this repo public. We ended up in the top 6% of entrants for the competition. Our final method involved a fairly pedestrian Convolutional Neural Network, but this repo represents a much nicer set of tools for exploring and visualising the data.
+
+Included is a utility for carrying out multiclass binomial regression on arbitrary panel data, and an abandoned effort to implement the perceptron algorithm for linear separation of arbitrary high-dimensional data.
+
+---
 
 I've started writing some helper functions for dealing with the data. At the moment
 it's just data-related functions. You can call them in this sort of fashion:
